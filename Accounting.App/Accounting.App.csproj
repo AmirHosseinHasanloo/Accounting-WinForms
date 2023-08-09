@@ -62,6 +62,7 @@
     <Compile Include="Customers\AddOrEditCustomer.Designer.cs">
       <DependentUpon>AddOrEditCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExtentionMethods\ShamsiDateCovertor.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +75,17 @@
     <Compile Include="Customers\frmCustomers.Designer.cs">
       <DependentUpon>frmCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="newfrmAccounting.cs">
+    <Compile Include="Accounting\newfrmAccounting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="newfrmAccounting.Designer.cs">
+    <Compile Include="Accounting\newfrmAccounting.Designer.cs">
       <DependentUpon>newfrmAccounting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +119,9 @@
     <Compile Include="Validator\RequiredFieldValidator.designer.cs">
       <DependentUpon>RequiredFieldValidator.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Accounting\FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers\AddOrEditCustomer.resx">
       <DependentUpon>AddOrEditCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,7 +131,7 @@
     <EmbeddedResource Include="Customers\frmCustomers.resx">
       <DependentUpon>frmCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newfrmAccounting.resx">
+    <EmbeddedResource Include="Accounting\newfrmAccounting.resx">
       <DependentUpon>newfrmAccounting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

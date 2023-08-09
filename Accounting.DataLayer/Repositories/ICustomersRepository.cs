@@ -19,5 +19,6 @@ namespace DataLayer
         List<ListCustomersViewModel> GetCustomerName(string fillter = "");
         IEnumerable<Customer> SearchCustomers(string q);
         int GetCumtomerIdByName(string name);
+        string GetCustomerNameById(int id);
     }
 }

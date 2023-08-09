@@ -42,15 +42,16 @@ namespace DataLayer
 
         public bool UpdateCustomer(Customer customer)
         {
-            try
+            if (customer != null)
             {
                 db.Entry(customer).State = EntityState.Modified;
                 return true;
             }
-            catch (Exception)
+            else
             {
                 return false;
             }
+
         }
 
         public bool DeleteCustomer(int customerId)
@@ -96,7 +97,7 @@ namespace DataLayer
             }
             return db.Customers.Where(C => C.FullName.Contains(fillter)).Select(C => new ListCustomersViewModel()
             {
-                FullName=C.FullName
+                FullName = C.FullName
             }).ToList();
         }
 
@@ -108,6 +109,11 @@ namespace DataLayer
         public int GetCumtomerIdByName(string name)
         {
             return db.Customers.Where(q => q.FullName == name).Select(q => q.CustomerID).SingleOrDefault();
+        }
+
+        public string GetCustomerNameById(int id)
+        {
+            return db.Customers.Find(id).FullName;
         }
     }
 }
