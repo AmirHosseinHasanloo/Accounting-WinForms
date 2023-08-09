@@ -104,5 +104,10 @@ namespace DataLayer
         {
             db.Dispose();
         }
+
+        public int GetCumtomerIdByName(string name)
+        {
+            return db.Customers.Where(q => q.FullName == name).Select(q => q.CustomerID).SingleOrDefault();
+        }
     }
 }

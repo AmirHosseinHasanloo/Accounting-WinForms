@@ -18,5 +18,6 @@ namespace DataLayer
         bool DeleteCustomer(Customer customer);
         List<ListCustomersViewModel> GetCustomerName(string fillter = "");
         IEnumerable<Customer> SearchCustomers(string q);
+        int GetCumtomerIdByName(string name);
     }
 }
