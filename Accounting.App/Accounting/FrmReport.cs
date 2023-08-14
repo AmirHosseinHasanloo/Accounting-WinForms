@@ -69,5 +69,23 @@ namespace Accounting.App
                 }
             }
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgReport.CurrentRow != null)
+            {
+                if (RtlMessageBox.Show("آیا از ویرایش کردن این طرف حساب اطمینان دارید", "توجه", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    int AccountId = int.Parse(dgReport.CurrentRow.Cells[0].Value.ToString());
+                    newfrmAccounting accounting = new newfrmAccounting();
+                    accounting.AccountingId = AccountId;
+                    if (accounting.ShowDialog() == DialogResult.OK)
+                    {
+                        Filter();
+                    }
+                }
+            }
+        }
+
     }
 }

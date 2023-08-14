@@ -15,6 +15,7 @@ namespace Accounting.App
     public partial class newfrmAccounting : Form
     {
         DataContext db = new DataContext();
+        public int AccountingId = 0;
         ICustomersRepository customersRepository;
         public newfrmAccounting()
         {
@@ -26,6 +27,23 @@ namespace Accounting.App
         {
             dgCustomers.AutoGenerateColumns = false;
             dgCustomers.DataSource = db.CustomersRepository.GetCustomerName();
+            if (AccountingId != 0)
+            {
+                var account = db.AccountingRepository.GetById(AccountingId);
+                txtAmount.Text = account.Amount.ToString();
+                txtDescription.Text = account.Description.ToString();
+                txtName.Text = db.CustomersRepository.GetCustomerNameById(account.CustomerID).ToString();
+                if (account.TypeID == 1)
+                {
+                    rbRecive.Checked = true;
+                }
+                else
+                {
+                    rbPay.Checked = true;
+                }
+                this.Text = "ویرایش";
+                btnSubmit.Text = "ویرایش";
+            }
         }
 
         private void txtFillter_TextChanged(object sender, EventArgs e)
@@ -52,7 +70,15 @@ namespace Accounting.App
                         CustomerID = customersRepository.GetCumtomerIdByName(txtName.Text),
                         TypeID = (rbRecive.Checked) ? 1 : 2,
                     };
-                    db.AccountingRepository.Insert(accounting);
+                    if (AccountingId == 0)
+                    {
+                        db.AccountingRepository.Insert(accounting);
+                    }
+                    if (AccountingId != 0)
+                    {
+                        accounting.ID = AccountingId;
+                        db.AccountingRepository.Update(accounting);
+                    }
                     db.Save();
                     DialogResult = DialogResult.OK;
                 }
