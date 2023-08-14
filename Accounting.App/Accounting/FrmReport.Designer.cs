@@ -128,10 +128,10 @@
             // 
             // txtToDate
             // 
-            this.txtToDate.Location = new System.Drawing.Point(144, 26);
+            this.txtToDate.Location = new System.Drawing.Point(132, 27);
             this.txtToDate.Mask = "0000/00/00";
             this.txtToDate.Name = "txtToDate";
-            this.txtToDate.Size = new System.Drawing.Size(87, 23);
+            this.txtToDate.Size = new System.Drawing.Size(62, 23);
             this.txtToDate.TabIndex = 7;
             this.txtToDate.ValidatingType = typeof(System.DateTime);
             // 
@@ -141,32 +141,32 @@
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(120, 23);
             this.btnFilter.TabIndex = 6;
-            this.btnFilter.Text = "پیدا کن";
+            this.btnFilter.Text = "نمایش لیست";
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(237, 29);
+            this.label3.Location = new System.Drawing.Point(200, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 15);
+            this.label3.Size = new System.Drawing.Size(47, 15);
             this.label3.TabIndex = 4;
-            this.label3.Text = "از تاریخ :";
+            this.label3.Text = "تا تاریخ :";
             // 
             // txtFromDate
             // 
-            this.txtFromDate.Location = new System.Drawing.Point(291, 26);
+            this.txtFromDate.Location = new System.Drawing.Point(254, 27);
             this.txtFromDate.Mask = "0000/00/00";
             this.txtFromDate.Name = "txtFromDate";
-            this.txtFromDate.Size = new System.Drawing.Size(87, 23);
+            this.txtFromDate.Size = new System.Drawing.Size(62, 23);
             this.txtFromDate.TabIndex = 3;
             this.txtFromDate.ValidatingType = typeof(System.DateTime);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(384, 29);
+            this.label2.Location = new System.Drawing.Point(322, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 15);
             this.label2.TabIndex = 2;
@@ -174,10 +174,11 @@
             // 
             // cbCustomer
             // 
+            this.cbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomer.FormattingEnabled = true;
-            this.cbCustomer.Location = new System.Drawing.Point(438, 26);
+            this.cbCustomer.Location = new System.Drawing.Point(376, 26);
             this.cbCustomer.Name = "cbCustomer";
-            this.cbCustomer.Size = new System.Drawing.Size(87, 23);
+            this.cbCustomer.Size = new System.Drawing.Size(149, 23);
             this.cbCustomer.TabIndex = 1;
             // 
             // label1

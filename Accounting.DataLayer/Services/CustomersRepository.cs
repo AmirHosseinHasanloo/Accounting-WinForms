@@ -92,11 +92,13 @@ namespace DataLayer
             {
                 return db.Customers.Select(C => new ListCustomersViewModel()
                 {
+                    CustomerID = C.CustomerID,
                     FullName = C.FullName
                 }).ToList();
             }
             return db.Customers.Where(C => C.FullName.Contains(fillter)).Select(C => new ListCustomersViewModel()
             {
+                CustomerID = C.CustomerID,
                 FullName = C.FullName
             }).ToList();
         }

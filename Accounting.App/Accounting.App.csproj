@@ -62,7 +62,7 @@
     <Compile Include="Customers\AddOrEditCustomer.Designer.cs">
       <DependentUpon>AddOrEditCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExtentionMethods\ShamsiDateCovertor.cs" />
+    <Compile Include="ExtentionMethods\DateCovertor.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

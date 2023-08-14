@@ -41,7 +41,6 @@ namespace DataLayer
         }
         public virtual void Update(TEntity entity)
         {
-            _dbSet.Attach(entity);
             _db.Entry(entity).State = EntityState.Modified;
         }
         public virtual void Delete(TEntity entity)
