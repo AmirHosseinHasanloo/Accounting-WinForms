@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Accounting.Bussiness;
+using AccountingViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,6 +49,7 @@ namespace Accounting.App
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Hide();
+            ReportMonth();
             frmLogin frmLog = new frmLogin();
             if (frmLog.ShowDialog() == DialogResult.OK)
             {
@@ -57,6 +60,13 @@ namespace Accounting.App
             {
                 Application.Exit();
             }
+        }
+        void ReportMonth()
+        {
+            ReportViewModel report = Account.ReportMonth();
+            lblRecive.Text = report.Recive.ToString("#,0");
+            lblPay.Text = report.Pay.ToString("#,0");
+            lblBalance.Text = report.Balance.ToString("#,0");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
