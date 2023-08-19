@@ -44,12 +44,12 @@
             this.tsClock = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblRecive = new System.Windows.Forms.Label();
-            this.lblPay = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
+            this.lblPay = new System.Windows.Forms.Label();
+            this.lblRecive = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblBalanceDay = new System.Windows.Forms.Label();
             this.lblPayDay = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.btnBindGrid = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,7 +176,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsDate,
             this.tsClock});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 476);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 508);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(680, 22);
             this.statusStrip1.TabIndex = 3;
@@ -207,63 +208,63 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 211);
+            this.groupBox1.Location = new System.Drawing.Point(12, 247);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(424, 115);
+            this.groupBox1.Size = new System.Drawing.Size(409, 115);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "گزارش این ماه :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(352, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "دریافتی ها :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(352, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "پرداختی ها :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(352, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "مانده :";
-            // 
-            // lblRecive
-            // 
-            this.lblRecive.Location = new System.Drawing.Point(6, 24);
-            this.lblRecive.Name = "lblRecive";
-            this.lblRecive.Size = new System.Drawing.Size(340, 15);
-            this.lblRecive.TabIndex = 3;
-            this.lblRecive.Text = "0";
-            // 
-            // lblPay
-            // 
-            this.lblPay.Location = new System.Drawing.Point(6, 57);
-            this.lblPay.Name = "lblPay";
-            this.lblPay.Size = new System.Drawing.Size(340, 15);
-            this.lblPay.TabIndex = 4;
-            this.lblPay.Text = "0";
             // 
             // lblBalance
             // 
             this.lblBalance.Location = new System.Drawing.Point(6, 89);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(340, 15);
+            this.lblBalance.Size = new System.Drawing.Size(325, 15);
             this.lblBalance.TabIndex = 5;
             this.lblBalance.Text = "0";
+            // 
+            // lblPay
+            // 
+            this.lblPay.Location = new System.Drawing.Point(3, 57);
+            this.lblPay.Name = "lblPay";
+            this.lblPay.Size = new System.Drawing.Size(328, 15);
+            this.lblPay.TabIndex = 4;
+            this.lblPay.Text = "0";
+            // 
+            // lblRecive
+            // 
+            this.lblRecive.Location = new System.Drawing.Point(3, 24);
+            this.lblRecive.Name = "lblRecive";
+            this.lblRecive.Size = new System.Drawing.Size(328, 15);
+            this.lblRecive.TabIndex = 3;
+            this.lblRecive.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(337, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "مانده :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(337, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "پرداختی ها :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(337, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "دریافتی ها :";
             // 
             // groupBox2
             // 
@@ -273,41 +274,41 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(12, 90);
+            this.groupBox2.Location = new System.Drawing.Point(12, 129);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(424, 115);
+            this.groupBox2.Size = new System.Drawing.Size(409, 112);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "گزارش امروز :";
             // 
             // lblBalanceDay
             // 
-            this.lblBalanceDay.Location = new System.Drawing.Point(6, 89);
+            this.lblBalanceDay.Location = new System.Drawing.Point(4, 89);
             this.lblBalanceDay.Name = "lblBalanceDay";
-            this.lblBalanceDay.Size = new System.Drawing.Size(340, 15);
+            this.lblBalanceDay.Size = new System.Drawing.Size(327, 15);
             this.lblBalanceDay.TabIndex = 5;
             this.lblBalanceDay.Text = "0";
             // 
             // lblPayDay
             // 
-            this.lblPayDay.Location = new System.Drawing.Point(6, 57);
+            this.lblPayDay.Location = new System.Drawing.Point(4, 57);
             this.lblPayDay.Name = "lblPayDay";
-            this.lblPayDay.Size = new System.Drawing.Size(340, 15);
+            this.lblPayDay.Size = new System.Drawing.Size(327, 15);
             this.lblPayDay.TabIndex = 4;
             this.lblPayDay.Text = "0";
             // 
             // lblReciveDay
             // 
-            this.lblReciveDay.Location = new System.Drawing.Point(6, 24);
+            this.lblReciveDay.Location = new System.Drawing.Point(4, 24);
             this.lblReciveDay.Name = "lblReciveDay";
-            this.lblReciveDay.Size = new System.Drawing.Size(340, 15);
+            this.lblReciveDay.Size = new System.Drawing.Size(327, 15);
             this.lblReciveDay.TabIndex = 3;
             this.lblReciveDay.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(352, 89);
+            this.label7.Location = new System.Drawing.Point(337, 89);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 15);
             this.label7.TabIndex = 2;
@@ -316,7 +317,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(352, 57);
+            this.label8.Location = new System.Drawing.Point(337, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 15);
             this.label8.TabIndex = 1;
@@ -325,7 +326,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(352, 24);
+            this.label9.Location = new System.Drawing.Point(337, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 15);
             this.label9.TabIndex = 0;
@@ -339,41 +340,41 @@
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Location = new System.Drawing.Point(12, 332);
+            this.groupBox3.Location = new System.Drawing.Point(12, 368);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(424, 115);
+            this.groupBox3.Size = new System.Drawing.Size(409, 115);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "گزارش امسال :";
             // 
             // lblBalanceYear
             // 
-            this.lblBalanceYear.Location = new System.Drawing.Point(6, 89);
+            this.lblBalanceYear.Location = new System.Drawing.Point(14, 89);
             this.lblBalanceYear.Name = "lblBalanceYear";
-            this.lblBalanceYear.Size = new System.Drawing.Size(340, 15);
+            this.lblBalanceYear.Size = new System.Drawing.Size(317, 15);
             this.lblBalanceYear.TabIndex = 5;
             this.lblBalanceYear.Text = "0";
             // 
             // lblPayYear
             // 
-            this.lblPayYear.Location = new System.Drawing.Point(6, 57);
+            this.lblPayYear.Location = new System.Drawing.Point(10, 57);
             this.lblPayYear.Name = "lblPayYear";
-            this.lblPayYear.Size = new System.Drawing.Size(340, 15);
+            this.lblPayYear.Size = new System.Drawing.Size(321, 15);
             this.lblPayYear.TabIndex = 4;
             this.lblPayYear.Text = "0";
             // 
             // lblReciveYear
             // 
-            this.lblReciveYear.Location = new System.Drawing.Point(6, 24);
+            this.lblReciveYear.Location = new System.Drawing.Point(10, 24);
             this.lblReciveYear.Name = "lblReciveYear";
-            this.lblReciveYear.Size = new System.Drawing.Size(340, 15);
+            this.lblReciveYear.Size = new System.Drawing.Size(321, 15);
             this.lblReciveYear.TabIndex = 3;
             this.lblReciveYear.Text = "0";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(352, 89);
+            this.label13.Location = new System.Drawing.Point(337, 89);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 15);
             this.label13.TabIndex = 2;
@@ -382,7 +383,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(352, 57);
+            this.label14.Location = new System.Drawing.Point(337, 57);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 15);
             this.label14.TabIndex = 1;
@@ -391,22 +392,33 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(352, 24);
+            this.label15.Location = new System.Drawing.Point(339, 24);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(66, 15);
             this.label15.TabIndex = 0;
             this.label15.Text = "دریافتی ها :";
+            // 
+            // btnBindGrid
+            // 
+            this.btnBindGrid.Location = new System.Drawing.Point(12, 100);
+            this.btnBindGrid.Name = "btnBindGrid";
+            this.btnBindGrid.Size = new System.Drawing.Size(409, 23);
+            this.btnBindGrid.TabIndex = 7;
+            this.btnBindGrid.Text = "بروزرسانی گزارشات";
+            this.btnBindGrid.UseVisualStyleBackColor = true;
+            this.btnBindGrid.Click += new System.EventHandler(this.btnBindGrid_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(680, 498);
+            this.ClientSize = new System.Drawing.Size(680, 530);
+            this.Controls.Add(this.btnBindGrid);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
@@ -473,6 +485,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnBindGrid;
     }
 }
 

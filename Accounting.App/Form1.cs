@@ -49,7 +49,7 @@ namespace Accounting.App
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Hide();
-            ReportMonth();
+            BindGrid();
             frmLogin frmLog = new frmLogin();
             if (frmLog.ShowDialog() == DialogResult.OK)
             {
@@ -61,6 +61,14 @@ namespace Accounting.App
                 Application.Exit();
             }
         }
+
+        void BindGrid()
+        {
+            ReportMonth();
+            ReportDay();
+            ReportYear();
+        }
+
         void ReportMonth()
         {
             ReportViewModel report = Account.ReportMonth();
@@ -68,7 +76,21 @@ namespace Accounting.App
             lblPay.Text = report.Pay.ToString("#,0");
             lblBalance.Text = report.Balance.ToString("#,0");
         }
+        void ReportDay()
+        {
+            ReportViewModel report = Account.ReportDay();
+            lblReciveDay.Text = report.Recive.ToString("#,0");
+            lblPayDay.Text = report.Pay.ToString("#,0");
+            lblBalanceDay.Text = report.Balance.ToString("#,0");
+        }
 
+        void ReportYear()
+        {
+            ReportViewModel report = Account.ReportYear();
+            lblReciveYear.Text = report.Recive.ToString("#,0");
+            lblPayYear.Text = report.Pay.ToString("#,0");
+            lblBalanceYear.Text = report.Balance.ToString("#,0");
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             tsClock.Text = " " + DateTime.Now.ToString("HH:mm:ss");
@@ -79,6 +101,11 @@ namespace Accounting.App
             frmLogin frmLog = new frmLogin();
             frmLog.IsEdit = true;
             frmLog.ShowDialog();
+        }
+
+        private void btnBindGrid_Click(object sender, EventArgs e)
+        {
+            BindGrid();
         }
     }
 }
