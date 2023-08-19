@@ -59,29 +59,38 @@ namespace Accounting.App
         {
             using (DataContext db = new DataContext())
             {
-                DateTime? StartDate;
-                DateTime? EndDate;
+
                 List<DataLayer.Accounting> result = new List<DataLayer.Accounting>();
-                if (txtFromDate.Text != "    /  /")
-                {
-                    StartDate = Convert.ToDateTime(txtFromDate.Text);
-                    StartDate = DateCovertor.ToMiladi(StartDate.Value);
-                    result.Where(r => r.CreateDate >= StartDate.Value).ToList();
-                }
-                if (txtToDate.Text != "    /  /")
-                {
-                    EndDate = Convert.ToDateTime(txtToDate.Text);
-                    EndDate = DateCovertor.ToMiladi(EndDate.Value);
-                    result.Where(r => r.CreateDate <= EndDate.Value).ToList();
-                }
+
+
+
                 if ((int)cbCustomer.SelectedValue != 0)
                 {
-                    int CustomerId = Convert.ToInt32(cbCustomer.SelectedValue.ToString());
+                    int CustomerId = int.Parse(cbCustomer.SelectedValue.ToString());
                     result.AddRange(db.AccountingRepository.Get(a => a.TypeID == TypeID && a.CustomerID == CustomerId));
                 }
                 else
                 {
                     result.AddRange(db.AccountingRepository.Get(a => a.TypeID == TypeID));
+                }
+
+
+                DateTime? startDate;
+
+                if (txtFromDate.Text != "    /  /")
+                {
+                    startDate = Convert.ToDateTime(txtFromDate.Text);
+                    startDate = DateCovertor.ToMiladi(startDate.Value);
+                    result = result.Where(r => r.CreateDate >= startDate.Value).ToList();
+                }
+
+                DateTime? endDate;
+
+                if (txtToDate.Text != "    /  /")
+                {
+                    endDate = Convert.ToDateTime(txtToDate.Text);
+                    endDate = DateCovertor.ToMiladi(endDate.Value);
+                    result.Where(r => r.CreateDate <= endDate.Value).ToList();
                 }
 
                 dgReport.Rows.Clear();
@@ -130,5 +139,37 @@ namespace Accounting.App
             }
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            DataTable dtPrint = new DataTable();
+            dtPrint.Columns.Add("Customer");
+            dtPrint.Columns.Add("Amount");
+            dtPrint.Columns.Add("CreateDate");
+            dtPrint.Columns.Add("Description");
+            foreach (DataGridViewRow item in dgReport.Rows)
+            {
+                dtPrint.Rows.Add(
+                item.Cells[1].Value.ToString(),
+                item.Cells[2].Value.ToString(),
+                item.Cells[3].Value.ToString(),
+                item.Cells[4].Value.ToString()
+                );
+            }
+
+            DataTable DTsum = new DataTable();
+            DTsum.Columns.Add("RpSum");
+
+            using (DataContext db = new DataContext())
+            {
+                float Find = db.AccountingRepository.Get(a => a.TypeID == TypeID).ToList().Sum(a => a.Amount);
+                DTsum.Rows.Add(Find.ToString("#,0")+ " تومان");
+            }
+
+            StiPrint.Load(Application.StartupPath + "/Report.mrt");
+            StiPrint.RegData("DT", dtPrint);
+            StiPrint.RegData("DTSum", DTsum);
+            StiPrint.Show();
+
+        }
     }
 }

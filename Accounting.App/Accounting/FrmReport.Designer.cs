@@ -47,6 +47,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StiPrint = new Stimulsoft.Report.StiReport();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReport)).BeginInit();
@@ -109,6 +110,7 @@
             this.btnPrint.Text = "چاپ";
             this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPrint.ToolTipText = "چاپ کردن گزارش";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // groupBox1
             // 
@@ -244,6 +246,27 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // StiPrint
+            // 
+            this.StiPrint.CookieContainer = null;
+            this.StiPrint.EngineVersion = Stimulsoft.Report.Engine.StiEngineVersion.EngineV2;
+            this.StiPrint.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "Stimulsoft.Controls.Dll",
+        "Stimulsoft.Base.Dll",
+        "Stimulsoft.Report.Dll"};
+            this.StiPrint.ReportAlias = "Report";
+            this.StiPrint.ReportGuid = "5c43b61dba3446d2bf2e980ee586511e";
+            this.StiPrint.ReportName = "Report";
+            this.StiPrint.ReportSource = null;
+            this.StiPrint.ReportUnit = Stimulsoft.Report.StiReportUnitType.Inches;
+            this.StiPrint.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
+            this.StiPrint.UseProgressInThread = false;
+            // 
             // FrmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -292,5 +315,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private Stimulsoft.Report.StiReport StiPrint;
     }
 }

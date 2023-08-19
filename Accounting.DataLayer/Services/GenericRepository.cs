@@ -41,6 +41,10 @@ namespace DataLayer
         }
         public virtual void Update(TEntity entity)
         {
+            if (_db.Entry(entity).State == EntityState.Detached)
+            {
+                _dbSet.Attach(entity);
+            }
             _db.Entry(entity).State = EntityState.Modified;
         }
         public virtual void Delete(TEntity entity)

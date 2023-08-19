@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accounting;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -54,6 +55,22 @@ namespace DataLayer
                 return _accountingTypesRepository;
             }
         }
+
+
+        public DbSet<Login> Login { get; set; }
+        private GenericRepository<Login> _LoginRepository;
+        public GenericRepository<Login> LoginTypesRepository
+        {
+            get
+            {
+                if (_LoginRepository == null)
+                {
+                    _LoginRepository = new GenericRepository<Login>(this);
+                }
+                return _LoginRepository;
+            }
+        }
+
 
         public void Save()
         {
